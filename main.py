@@ -3,9 +3,10 @@ import string
 from nltk.corpus import stopwords
 import nltk
 from nltk.stem.porter import PorterStemmer
+import streamlit
+
 ps = PorterStemmer()
-nltk.download('punkt')
-nltk.download('stopwords')
+
 
 def transform_text(text):
   text = text.lower() # converting text to lower case
