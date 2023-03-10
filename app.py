@@ -59,4 +59,4 @@ def transform_text(text):
     return y
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
