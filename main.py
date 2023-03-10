@@ -3,10 +3,15 @@ import string
 from nltk.corpus import stopwords
 import nltk
 from nltk.stem.porter import PorterStemmer
-import streamlit
+import streamlit as st
+
 
 ps = PorterStemmer()
 
+
+st.title('Spam Classifier')
+st.subheader('Enter your message:')
+input_sms = st.text_input(label='SMS/EMAIL')
 
 def transform_text(text):
   text = text.lower() # converting text to lower case
@@ -37,16 +42,16 @@ model = pickle.load(open('model.pkl','rb'))
 
 
 
-input_sms = input("Enter the message: ")
+if st.button('Predict'):
 
-# preprocessing input data
-transform_sms = transform_text(input_sms)
-# vectorize
-vectorized_sms = tfid.transform(transform_sms)
-# predict
-result =model.predict(vectorized_sms)[0]
-# Display
-if result == 1:
-  print('Spam')
-else:
-  print('Not Spam')  
+  # preprocessing input data
+  transform_sms = transform_text(input_sms)
+  # vectorize
+  vectorized_sms = tfid.transform(transform_sms)
+  # predict
+  result = model.predict(vectorized_sms)[0]
+  # Display
+  if result == 1:
+    st.write('Spam')
+  else:
+    st.write('Not Spam')  
