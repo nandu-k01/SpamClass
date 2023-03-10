@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@100;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
     <title>Spam Classifier</title>
 </head>
+
 <body>
-    <h1>Spam Classifier</h1>
-    <form method="POST" action="/predict">
-        <label for="input_sms">Enter your message:</label>
-        <input type="text" name="input_sms" id="input_sms">
-        <button type="submit">Predict</button>
-    </form>
-    {% if prediction_text %}
-        <p>Prediction: {{ prediction_text }}</p>
-    {% endif %}
+    <div class="">
+
+    </div>
+    <div class="title">
+        <h1>Spam Classifier</h1>
+    </div>
+    <div class="card">
+        <form method="POST" action="/predict" class="form">
+            <label for="input_sms">Enter your message:</label>
+            <br>
+            <input type="text" name="input_sms" id="input_sms">
+            <br>
+            <button type="submit">Predict</button>
+        </form>
+        <div id="message">
+            {% if error %}
+            <p class="message-error">Please enter a message</p>
+            {% endif %}
+            {% if prediction_text %}
+            <p>{{ prediction_text }}</p>
+            {% endif %}
+        </div>
+    </div>
+
 </body>
+
 </html>

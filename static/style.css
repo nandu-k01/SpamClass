@@ -1,0 +1,130 @@
+.title{
+  margin:auto;
+  color: #000000;
+  text-align: left;
+  font-family: sans-serif;
+  font-size: large;
+  opacity: .6;
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers the form vertically */
+  align-items: center; /* centers the form horizontally */
+  padding-top: 38px;
+}
+
+label{
+  font-size: large;
+  font-family: Sans-serif;
+  padding-right: 35%;
+  color: #000000;
+}
+
+input {
+  border-radius: 10px;
+  outline: 2px solid #FBB28F;
+  border: 0;
+  font-family: sans-serif;
+  background-color: #FFF;
+  color: #000000;
+  outline-offset: 3px;
+  width: 60%;
+  height: 40px;
+  transition: 0.25s;
+}
+
+input:focus {
+  outline-offset: 5px;
+  background-color: #FFF;
+}
+
+
+
+#message{
+  color: #000000;
+  font-size: x-large;
+  text-align: center;
+  font-family: Sans-serif;
+}
+.message-error{
+  color: #000000;
+  font-size: large;
+  text-align: center;
+  font-family: Sans-serif;
+}
+
+button {
+  --color: #FBB28F;
+  background-color: #FFF;
+  font-family: inherit;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  line-height: 2.5em;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #FBB28F;
+  border: 0 solid var(--color);
+  transition: color .5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #000000;
+ }
+ 
+ button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+ }
+ 
+ button:hover {
+  color: #000000;
+  outline-offset: 2px;
+ }
+ 
+ button:before {
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
+ }
+ 
+ button:hover:before {
+  top: -30px;
+  left: -30px;
+ }
+ 
+ button:active:before {
+  background: #FBB28F;
+  transition: background 0s;
+ }
+ 
+
+ .card {
+  margin: auto;
+   margin-top: 50px;
+   width: 42%;
+   height: 300px;
+   border-radius: 50px;
+   background: #Fff;
+   opacity: .75;
+   /* box-shadow: 4px 4px 8px #FAEBD7;
+                 -5px -5px 10px #000000000000; */
+  }
+
+body{
+  width: 100%;
+  height: 100%;
+  background-size:cover;
+  background-image: url(https://img.freepik.com/free-vector/abstract-splashed-watercolor-textured-background_53876-8573.jpg?w=1060&t=st=1678475360~exp=1678475960~hmac=571418efeb6f09da98694193b5a7b8d0f718d70e96c10fbe1c0e4067e7bc86cf);
+}
+

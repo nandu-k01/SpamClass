@@ -18,18 +18,21 @@ def predict():
     model = pickle.load(open('model.pkl', 'rb'))
 
     input_sms = request.form['input_sms']
-    transform_sms = transform_text(input_sms)
-
-    vectorized_sms = tfid.transform(transform_sms)
-
-    result = model.predict(vectorized_sms)[0]
-
-    if result == 1:
-        output = 'Spam'
+    if input_sms == '' :
+        return render_template('index.html', error='{}'.format('Error'))
     else:
-        output = 'Not Spam'
+        transform_sms = transform_text(input_sms)
 
-    return render_template('index.html', prediction_text='{}'.format(output))
+        vectorized_sms = tfid.transform(transform_sms)
+
+        result = model.predict(vectorized_sms)[0]
+
+        if result == 1:
+            output = 'Spam'
+        else:
+            output = 'Not Spam'
+
+        return render_template('index.html', prediction_text='{}'.format(output))
 
 def transform_text(text):
     text = text.lower()
