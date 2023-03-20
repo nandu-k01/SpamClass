@@ -21,7 +21,7 @@ def predict():
 
     input_sms = request.form['input_sms']
     if input_sms == '' :
-        return render_template('index.html', error='{}'.format('Error'))
+        return render_template('index.html', error='{a}'.format('Error'))
     else:
         transform_sms = transform_text(input_sms)
 
